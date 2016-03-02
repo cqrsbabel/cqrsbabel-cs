@@ -1,21 +1,32 @@
 ﻿using Xunit;
 using CQRSBabel;
+using System;
 
 namespace CQRSBabelTests
 {
-  public class Class1
+  public class Class1 : IDisposable
   {
+    Class2 test;
+
+    public Class1()
+    {
+      test = new Class2();
+    }
+
+    public void Dispose()
+    {
+      test = null; 
+    }
+
     [Fact]
     public void PassingTest()
     {
-      var test = new Class2();
       Assert.Equal(4, test.Add(2, 2));
     }
 
     [Fact]
     public void FailingTest()
     {
-      var test = new Class2();
       Assert.Equal(5, test.Add(2, 2));
     }
 
@@ -25,7 +36,6 @@ namespace CQRSBabelTests
     [InlineData(6)]
     public void MyFirstTheory(int value)
     {
-      var test = new Class2();
       Assert.True(test.IsOdd(value));
     }
   }
