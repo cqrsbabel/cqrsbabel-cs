@@ -1,4 +1,5 @@
 ﻿using Xunit;
+using CQRSBabel;
 
 namespace CQRSBabelTests
 {
@@ -7,13 +8,15 @@ namespace CQRSBabelTests
     [Fact]
     public void PassingTest()
     {
-      Assert.Equal(4, Add(2, 2));
+      var test = new Class2();
+      Assert.Equal(4, test.Add(2, 2));
     }
 
     [Fact]
     public void FailingTest()
     {
-      Assert.Equal(5, Add(2, 2));
+      var test = new Class2();
+      Assert.Equal(5, test.Add(2, 2));
     }
 
     [Theory]
@@ -22,17 +25,8 @@ namespace CQRSBabelTests
     [InlineData(6)]
     public void MyFirstTheory(int value)
     {
-      Assert.True(IsOdd(value));
-    }
-
-    bool IsOdd(int value)
-    {
-      return value % 2 == 1;
-    }
-
-    int Add(int x, int y)
-    {
-      return x + y;
+      var test = new Class2();
+      Assert.True(test.IsOdd(value));
     }
   }
 }
