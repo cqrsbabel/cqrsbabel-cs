@@ -8,9 +8,9 @@
   {
     public abstract void Deliver(ITinyMessage message, ITinyMessageSubscription subscription);
 
-    protected static void ValidateMessage(ITinyMessage message)
+    protected virtual void ValidateMessage(ITinyMessage message)
     {
-      // must be overriden to validate message
+      // might be overriden to validate message
     }
 
     protected static string ExtractMethodName(ITinyMessageSubscription subscription)
@@ -21,25 +21,28 @@
     }
   }
 
-  public class Proxy : BaseProxy
+  public class QueryProxy : BaseProxy, IQueryProxyInternal
   {
-    private static readonly Proxy _Instance = new Proxy();
-    public static ITinyMessageProxy Instance { get { return _Instance; } }
+    private static readonly QueryProxy _Instance = new QueryProxy();
+    public ITinyMessageProxy Instance { get { return _Instance; } }
 
     public override void Deliver(ITinyMessage message, ITinyMessageSubscription subscription)
     {
-      // must be overriden to deliver query message
+      // might be overriden to deliver query message
+      subscription.Deliver(message);
     }
   }
 
-  public class ProxyTransaction : BaseProxy
+  public class CommandProxy : BaseProxy, ICommandProxyInternal
   {
-    private static readonly ProxyTransaction _Instance = new ProxyTransaction();
-    public static ITinyMessageProxy Instance { get { return _Instance; } }
+    private static readonly CommandProxy _Instance = new CommandProxy();
+    
+    public ITinyMessageProxy Instance { get { return _Instance; } }
 
     public override void Deliver(ITinyMessage message, ITinyMessageSubscription subscription)
     {
-      // must be overriden to deliver command message
+      // might be overriden to deliver command message
+      subscription.Deliver(message);
     }
   }
 }

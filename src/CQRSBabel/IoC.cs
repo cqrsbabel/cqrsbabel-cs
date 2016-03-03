@@ -25,5 +25,10 @@
     {
       return Container.Resolve<T>();
     }
+
+    public static bool TryResolve<T>(out T resolvedType) where T : class
+    {
+      return Container.TryResolve<T>(out resolvedType);
+    }
   }
 }

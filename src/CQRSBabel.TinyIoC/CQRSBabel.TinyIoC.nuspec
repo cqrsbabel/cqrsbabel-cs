@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>Daniel Marques</authors>
+    <owners>Daniel Marques</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>Implementation of TinyIoC dependencies.</releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <tags>CQRS polyglot</tags>
+  </metadata>
+</package>

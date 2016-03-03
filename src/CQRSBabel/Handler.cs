@@ -14,7 +14,12 @@
     public QueryHandler()
     {
       var hub = IoC.Resolve<ITinyMessengerHub>();
-      Token = hub.Subscribe<T>(Handle, (m) => m.Token == Token, Proxy.Instance);
+
+      IQueryProxy proxy;
+      if (IoC.TryResolve(out proxy))
+        Token = hub.Subscribe<T>(Handle, (m) => m.Token == Token, proxy.Instance);
+      else
+        Token = hub.Subscribe<T>(Handle, (m) => m.Token == Token, IoC.Resolve<IQueryProxyInternal>().Instance);
     }
 
     public abstract void Handle(T message);
@@ -27,7 +32,12 @@
     public CommandHandler()
     {
       var hub = IoC.Resolve<ITinyMessengerHub>();
-      Token = hub.Subscribe<T>(Handle, (m) => m.Token == Token, ProxyTransaction.Instance);
+
+      ICommandProxy proxy;
+      if (IoC.TryResolve(out proxy))
+        Token = hub.Subscribe<T>(Handle, (m) => m.Token == Token, proxy.Instance);
+      else
+        Token = hub.Subscribe<T>(Handle, (m) => m.Token == Token, IoC.Resolve<ICommandProxyInternal>().Instance);
     }
 
     public abstract void Handle(T message);

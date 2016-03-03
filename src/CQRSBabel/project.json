@@ -1,16 +1,16 @@
 ﻿{
-  "version": "1.0.0-beta-1",
+  "version": "1.0.9-*",
   "description": "CQRSBabel Class Library",
-  "authors": [ "Daniel Ferreira Marques" ],
+  "authors": [ "Daniel Marques" ],
   "tags": [ "" ],
   "projectUrl": "",
   "licenseUrl": "",
-
   "frameworks": {
     "net35": {
       "dependencies": {
-        "System.Web": "1.0.0-*"
+        "CQRSBabel.TinyIoC": "1.0.0-*"
       }
     }
+
   }
 }

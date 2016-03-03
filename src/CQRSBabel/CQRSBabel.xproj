@@ -17,5 +17,12 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <ProduceOutputsOnBuild>True</ProduceOutputsOnBuild>
   </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\ConsoleApplication5\Framework\Framework.csproj" />
+    <ProjectReference Include="..\..\CQRSBabel.TinyIoC\CQRSBabel.TinyIoC.csproj" />
+    <ProjectReference Include="..\..\CQRSBabel.Web\CQRSBabel.Web.csproj" />
+    <ProjectReference Include="..\CQRSBabel.TinyIoC\CQRSBabel.TinyIoC.csproj" />
+    <ProjectReference Include="..\Framework\Framework.csproj" />
+  </ItemGroup>
   <Import Project="$(VSToolsPath)\DNX\Microsoft.DNX.targets" Condition="'$(VSToolsPath)' != ''" />
 </Project>

@@ -15,7 +15,7 @@ namespace CQRSBabelTests
 
     public void Dispose()
     {
-      test = null; 
+      test = null;
     }
 
     [Fact]
@@ -25,15 +25,15 @@ namespace CQRSBabelTests
     }
 
     [Fact]
-    public void FailingTest()
+    public void AssertNotEqualTest()
     {
-      Assert.Equal(5, test.Add(2, 2));
+      Assert.NotEqual(5, test.Add(2, 2));
     }
 
     [Theory]
     [InlineData(3)]
     [InlineData(5)]
-    [InlineData(6)]
+    [InlineData(7)]
     public void MyFirstTheory(int value)
     {
       Assert.True(test.IsOdd(value));

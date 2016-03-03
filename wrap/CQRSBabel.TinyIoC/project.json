@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "net35": {
+      "wrappedProject": "../../src/CQRSBabel.TinyIoC/CQRSBabel.TinyIoC.csproj",
+      "bin": {
+        "assembly": "../../src/CQRSBabel.TinyIoC/obj/{configuration}/CQRSBabel.TinyIoC.dll",
+        "pdb": "../../src/CQRSBabel.TinyIoC/obj/{configuration}/CQRSBabel.TinyIoC.pdb"
+      }
+    }
+  }
+}
