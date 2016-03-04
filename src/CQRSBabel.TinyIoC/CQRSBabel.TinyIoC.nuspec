@@ -11,5 +11,8 @@
     <releaseNotes>Implementation of TinyIoC dependencies.</releaseNotes>
     <copyright>Copyright 2016</copyright>
     <tags>CQRS polyglot</tags>
+    <dependencies>
+      <dependency id="CQRSBabel" version="1.0.0.0"/>
+    </dependencies>
   </metadata>
 </package>
