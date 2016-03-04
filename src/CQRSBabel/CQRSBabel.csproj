@@ -45,7 +45,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseRequest.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="IHandler.cs" />
     <Compile Include="IIoC.cs" />
     <Compile Include="IMessengerHub.cs" />
