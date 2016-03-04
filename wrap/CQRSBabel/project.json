@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "net35": {
+      "wrappedProject": "../../src/CQRSBabel/CQRSBabel.csproj",
+      "bin": {
+        "assembly": "../../src/CQRSBabel/obj/{configuration}/CQRSBabel.dll",
+        "pdb": "../../src/CQRSBabel/obj/{configuration}/CQRSBabel.pdb"
+      }
+    }
+  }
+}
