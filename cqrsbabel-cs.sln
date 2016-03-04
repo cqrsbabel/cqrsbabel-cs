@@ -10,11 +10,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		global.json = global.json
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "CQRSBabel", "src\CQRSBabel\CQRSBabel.xproj", "{0C03CF69-A018-4DAC-B82B-04E5B9D9B952}"
-EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "CQRSBabelTests", "src\CQRSBabelTests\CQRSBabelTests.xproj", "{66A631B5-87BC-42FD-867D-81F11D92A54A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQRSBabel.TinyIoC", "src\CQRSBabel.TinyIoC\CQRSBabel.TinyIoC.csproj", "{E140C249-0377-401C-854F-D22A2D0D6690}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQRSBabel", "src\CQRSBabel\CQRSBabel.csproj", "{48F34399-35F4-47C1-8914-16BE229DB2E3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,10 +22,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0C03CF69-A018-4DAC-B82B-04E5B9D9B952}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0C03CF69-A018-4DAC-B82B-04E5B9D9B952}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0C03CF69-A018-4DAC-B82B-04E5B9D9B952}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0C03CF69-A018-4DAC-B82B-04E5B9D9B952}.Release|Any CPU.Build.0 = Release|Any CPU
 		{66A631B5-87BC-42FD-867D-81F11D92A54A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{66A631B5-87BC-42FD-867D-81F11D92A54A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66A631B5-87BC-42FD-867D-81F11D92A54A}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -34,13 +30,17 @@ Global
 		{E140C249-0377-401C-854F-D22A2D0D6690}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E140C249-0377-401C-854F-D22A2D0D6690}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E140C249-0377-401C-854F-D22A2D0D6690}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48F34399-35F4-47C1-8914-16BE229DB2E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48F34399-35F4-47C1-8914-16BE229DB2E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48F34399-35F4-47C1-8914-16BE229DB2E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48F34399-35F4-47C1-8914-16BE229DB2E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{0C03CF69-A018-4DAC-B82B-04E5B9D9B952} = {93674625-80A1-4355-9D97-01259982546E}
 		{66A631B5-87BC-42FD-867D-81F11D92A54A} = {93674625-80A1-4355-9D97-01259982546E}
 		{E140C249-0377-401C-854F-D22A2D0D6690} = {93674625-80A1-4355-9D97-01259982546E}
+		{48F34399-35F4-47C1-8914-16BE229DB2E3} = {93674625-80A1-4355-9D97-01259982546E}
 	EndGlobalSection
 EndGlobal

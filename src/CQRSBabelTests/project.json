@@ -8,6 +8,7 @@
   "frameworks": {
     "dnx451": {
       "dependencies": {
+        "CQRSBabel.TinyIoC": "1.0.0-*"
       },
       "frameworkAssemblies": {
         "System.ComponentModel.DataAnnotations": "4.0.0.0"
@@ -18,7 +19,6 @@
     "test": "xunit.runner.dnx"
   },
   "dependencies": {
-    "CQRSBabel": "1.0.9-*",
     "xunit": "2.1.0",
     "xunit.runner.dnx": "2.1.0-rc1-build204",
     "xunit.runner.visualstudio": "2.1.0"

@@ -4,32 +4,42 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using TinyIoC;
 using Xunit;
 
 namespace CQRSBabelTests
 {
   public class Class3 : IDisposable
   {
-    Primeiro test;
+    //Primeiro test;
+    MessengerHub _hub;
 
     public Class3()
     {
-      test = new Primeiro();
+      var IoC = new IoC();
+      _hub = IoC.Resolve<MessengerHub>();
+      //_hub = TinyIoCContainer.Current.Resolve<MessengerHub>();
+      //test = new Primeiro();
+
     }
 
     public void Dispose()
     {
-      test = null;
+      //test = null;
     }
 
     [Fact]
     public void PrimeiroTesteDoCommand4()
     {
       var query = new Primeiro.Query { Total = 20, Nome = "Daniel" };
+      var query2 = new Primeiro.Query { Total = 10, Nome = "Marques" };
 
-      string retorno = Hub.Publish(query) as string;
+      string retorno = _hub.Publish(query) as string;
+
+      string retorno2 = _hub.Publish(query2) as string;
 
       Assert.False(string.IsNullOrEmpty(retorno));
+      Assert.False(string.IsNullOrEmpty(retorno2));
     }
   }
 
@@ -46,10 +56,6 @@ namespace CQRSBabelTests
 
     public class Handler : CommandHandler<Query>
     {
-      public Handler() : base()
-      {
-
-      }
       //private readonly Teste _teste;
       //private readonly Outro _outro;
 

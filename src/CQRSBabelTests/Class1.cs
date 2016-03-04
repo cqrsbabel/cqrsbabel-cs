@@ -1,5 +1,4 @@
 ﻿using Xunit;
-using CQRSBabel;
 using System;
 
 namespace CQRSBabelTests

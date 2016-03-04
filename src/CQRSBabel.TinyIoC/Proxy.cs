@@ -6,6 +6,8 @@
 
   public abstract class BaseProxy : ITinyMessageProxy
   {
+    protected static object _Instance;
+
     public abstract void Deliver(ITinyMessage message, ITinyMessageSubscription subscription);
 
     protected virtual void ValidateMessage(ITinyMessage message)
@@ -21,10 +23,18 @@
     }
   }
 
-  public class QueryProxy : BaseProxy, IQueryProxyInternal
+  public class QueryProxy : BaseProxy, IQueryProxyCore
   {
-    private static readonly QueryProxy _Instance = new QueryProxy();
-    public ITinyMessageProxy Instance { get { return _Instance; } }
+    public object Instance
+    {
+      get
+      {
+        if (_Instance == null)
+          _Instance = new QueryProxy();
+
+        return _Instance;
+      }
+    }
 
     public override void Deliver(ITinyMessage message, ITinyMessageSubscription subscription)
     {
@@ -33,11 +43,18 @@
     }
   }
 
-  public class CommandProxy : BaseProxy, ICommandProxyInternal
+  public class CommandProxy : BaseProxy, ICommandProxyCore
   {
-    private static readonly CommandProxy _Instance = new CommandProxy();
-    
-    public ITinyMessageProxy Instance { get { return _Instance; } }
+    public object Instance
+    {
+      get
+      {
+        if (_Instance == null)
+          _Instance = new CommandProxy();
+
+        return _Instance;
+      }
+    }
 
     public override void Deliver(ITinyMessage message, ITinyMessageSubscription subscription)
     {

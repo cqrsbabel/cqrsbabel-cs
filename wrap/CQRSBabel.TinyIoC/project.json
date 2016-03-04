@@ -6,6 +6,9 @@
       "bin": {
         "assembly": "../../src/CQRSBabel.TinyIoC/obj/{configuration}/CQRSBabel.TinyIoC.dll",
         "pdb": "../../src/CQRSBabel.TinyIoC/obj/{configuration}/CQRSBabel.TinyIoC.pdb"
+      },
+      "dependencies": {
+        "CQRSBabel": "1.0.0-*"
       }
     }
   }

@@ -1,8 +1,9 @@
 ﻿namespace CQRSBabel
 {
+  using System.Web;
   using TinyIoC;
-
-  public class IoC
+  using TinyMessenger;
+  public class IoC : IIoC
   {
     private static bool autoRegistered;
 
@@ -14,6 +15,10 @@
         if (!autoRegistered)
         {
           container.AutoRegister();
+
+          if (HttpContext.Current != null)
+            container.Register<ITinyMessengerHub, TinyMessengerHub>().AsPerRequestSingleton();
+
           autoRegistered = true;
         }
 
@@ -21,12 +26,12 @@
       }
     }
 
-    public static T Resolve<T>() where T : class
+    public T Resolve<T>() where T : class
     {
       return Container.Resolve<T>();
     }
 
-    public static bool TryResolve<T>(out T resolvedType) where T : class
+    public bool TryResolve<T>(out T resolvedType) where T : class
     {
       return Container.TryResolve<T>(out resolvedType);
     }
