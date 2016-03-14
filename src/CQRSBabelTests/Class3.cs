@@ -67,6 +67,7 @@ namespace CQRSBabelTests
 
       public override void Handle(Query message)
       {
+                //throw new Exception("teste erro");
         //_teste.NM_USUARIO = "Daniel";
         //message.Response = _teste;
 

@@ -50,7 +50,7 @@
   <ItemGroup>
     <Compile Include="Handler.cs" />
     <Compile Include="IRequest.cs" />
-    <Compile Include="Proxy.cs" />
+    <Compile Include="BaseProxy.cs" />
     <Compile Include="Request.cs" />
     <Compile Include="TinyIoCMessengerHub.cs" />
     <Compile Include="IoC.cs" />
